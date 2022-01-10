@@ -104,7 +104,7 @@ export default class Page {
     })
   }
 
-  rangeSelectHandler = async (event) => {
+  rangeSelectHandler = (event) => {
     this.url.searchParams.set('price_gte', event.detail.from);
     this.url.searchParams.set('price_lte', event.detail.to);
     this.components.sortableTable.sortOnServer({
@@ -112,14 +112,14 @@ export default class Page {
     })
   }
 
-  sortByStatusHandler = async (event) => {
+  sortByStatusHandler = (event) => {
     this.url.searchParams.set('status', event.target.value);
     this.components.sortableTable.sortOnServer({
       updatedURL: this.url
     })
   }
 
-  sortByNameHandler = async (event) => {
+  sortByNameHandler = (event) => {
     this.url.searchParams.set('title_like', event.target.value);
     this.components.sortableTable.sortOnServer({
       updatedURL: this.url

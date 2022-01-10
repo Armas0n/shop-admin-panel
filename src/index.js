@@ -35,6 +35,19 @@ const menuToggleHandler = (event) => {
 
 const highlightNavItem = (event) => {
   const pageClassList = event.detail.page.element.classList;
+
+  if (pageClassList.contains('dashboard') || pageClassList.contains('categories')) {
+    const checkbox = document.body.querySelector('.sorting-checkbox__container');
+    checkbox.style.display = 'none';
+    SortableTable.isSortLocally = true;
+  }
+
+  if (pageClassList.contains('sales') || pageClassList.contains('products-list')) {
+    const checkbox = document.body.querySelector('.sorting-checkbox__container');
+    checkbox.style.display = '';
+    SortableTable.isSortLocally = false;
+  }
+
   const sidebar = document.querySelector('.sidebar__nav');
   const navItems = sidebar.querySelectorAll('li');
   [...navItems].forEach(li => {

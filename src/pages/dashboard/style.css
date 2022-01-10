@@ -10,7 +10,7 @@
 }
 
 .dashboard__chart_sales {
-  --chart-column-color: var(--green);
+  --chart-column-color: var(--pink);
 }
 
 .dashboard__chart_customers {

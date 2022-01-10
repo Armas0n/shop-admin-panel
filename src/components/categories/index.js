@@ -1,5 +1,5 @@
 import SortableList from '../sortable-list';
-import FetchJSON from '../../utils/fetch-json';
+import fetchJson from '../../utils/fetch-json';
 import NotificationMessage from '../notification';
 
 export default class CategoriesList {
@@ -77,7 +77,7 @@ export default class CategoriesList {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(this.category.subcategories)
     };
-    await FetchJSON(url, params);
+    await fetchJson(url, params);
     const notificationMessage = new NotificationMessage('Order Saved', {
       duration: 5000,
       type: 'success'

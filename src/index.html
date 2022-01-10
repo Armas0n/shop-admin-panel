@@ -1,21 +1,21 @@
 <!DOCTYPE HTML>
-<meta charset="utf-8">
-
+<html lang='en'>
 <head>
+  <meta charset="UTF-8">
+  <meta name='keywords' content='admin, panel'>
+  <meta name="description" content="online shop admin panel">
   <title>Online Shop Admin Panel</title>
-  <link rel="apple-touch-icon-precomposed" href="/assets/favicon/apple-touch-icon-precomposed.png">
-  <link rel="icon" href="/assets/favicon/favicon.png">
+  <link rel="apple-touch-icon-precomposed" href="./assets/favicon/apple-touch-icon-precomposed.png">
+  <link rel="icon" href="./assets/favicon/favicon.png">
 </head>
-
 <body>
-
 <main class="main">
   <div class="progress-bar">
     <div class="progress-bar__line"></div>
   </div>
   <aside class="sidebar">
     <h2 class="sidebar__title">
-      <a href="/">shop admin</a>
+      <a href="/">shop admin panel</a>
     </h2>
     <ul class="sidebar__nav">
       <li>
@@ -24,7 +24,7 @@
         </a>
       </li>
       <li>
-        <a href="/products" data-page="products">
+        <a href="/products" data-page="products-list">
           <i class="icon-products"></i> <span>Products</span>
         </a>
       </li>
@@ -40,7 +40,7 @@
       </li>
     </ul>
     <ul class="sidebar__nav sidebar__nav_bottom">
-      <li>
+      <li class='sorting-checkbox__container'>
         <input disabled type="checkbox" class="custom-checkbox" id="sorting" name="sorting">
         <label class='sidebar__toggler_sorting-type'
                data-tooltip='Check to sort fetched data directly on local machine'
@@ -57,9 +57,16 @@
         </label>
       </li>
     </ul>
+    <div class='sidebar__contacts'>
+      <span class='sidebar__contacts_title'>Made by</span>
+      <a class='sidebar__contacts_link' href='https://vk.com/okhotskiy'>Adam Okhotskiy</a>
+      <img class='sidebar__contacts_image' width='28' src='./assets/icons/vk-brands.svg' alt='vk-logo'>
+      <div class='sidebar__contacts_year'>2022</div>
+    </div>
   </aside>
   <section class="content" id="content">
 
   </section>
 </main>
 </body>
+</html>

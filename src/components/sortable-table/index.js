@@ -30,7 +30,7 @@ export default class SortableTable {
           <div data-element="emptyPlaceholder" class="sortable-table__empty-placeholder">
             <div>
               <p>По вашим критериям поиска товаров не найдено</p>
-              <button type="button" class="button-primary-outline">Сбросить фильтры</button>
+              <button type="button" class="button-primary-outline reset-button">Сбросить фильтры</button>
             </div>
           </div>
         <div data-element="body" class="sortable-table__body"></div>
@@ -112,8 +112,13 @@ export default class SortableTable {
     }
   }
 
+  resetFilters = () => {
+    window.location.reload();
+  }
+
   attachEventListeners() {
     this.subElements.header.addEventListener('pointerdown', this.sortOnClick);
+    this.element.querySelector('.reset-button').addEventListener('click', this.resetFilters);
     document.addEventListener('scroll', this.scrollLoader);
   }
 

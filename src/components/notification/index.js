@@ -32,7 +32,6 @@ export default class NotificationMessage {
     if (NotificationMessage.prevNotification) {
       NotificationMessage.prevNotification.remove();
     }
-    this.element.style.position = 'fixed';
     const { clientHeight, clientWidth } = document.documentElement;
     const verticalShift = 100;
     const horizontalShift = 300;

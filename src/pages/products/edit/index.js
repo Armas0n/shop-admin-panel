@@ -6,6 +6,10 @@ export default class Page {
   components = {};
   currentLocation = window.location.pathname;
 
+  constructor(match) {
+    this.productId = match[1];
+  }
+
   getTemplate() {
     return `
       <div class='products-edit'>
@@ -25,9 +29,7 @@ export default class Page {
       this.components = { productForm: new ProductForm(null) }
     }
     else {
-      const pathArr = this.currentLocation.split('/');
-      const productId = pathArr[pathArr.length - 1];
-      this.components = { productForm: new ProductForm(productId) }
+      this.components = { productForm: new ProductForm(this.productId) }
     }
     await this.components.productForm.render();
     this.renderComponents();
@@ -60,20 +62,17 @@ export default class Page {
   }
 
   productEditHandler = () => {
-    if (this.currentLocation === '/products/add') {
-      const notificationMessage = new NotificationMessage('Product Added', {
-        duration: 10000,
-        type: 'success'
-      })
-      notificationMessage.show();
-    } else {
-      const notificationMessage = new NotificationMessage('Product Saved', {
-        duration: 10000,
-        type: 'success'
-      })
-      notificationMessage.show();
-    }
-  }
+    let notificationMessageText;
+    this.currentLocation === '/products/add'
+      ? notificationMessageText = 'Product Added'
+      : notificationMessageText = 'Product Saved';
+
+    const notificationMessage = new NotificationMessage(notificationMessageText, {
+      duration: 10000,
+      type: 'success'
+    });
+    notificationMessage.show();
+  };
 
   attachEventListeners() {
     if (this.currentLocation === '/products/add') {
