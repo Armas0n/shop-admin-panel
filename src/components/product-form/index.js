@@ -90,7 +90,7 @@ export default class ProductForm {
                  placeholder='${this.defaultFormData.quantity}'>
         </div>
         <div class='form-group form-group__part-half'>
-          <label class='form-label'>Статус</label>
+          <label class='form-label'>Status</label>
           <select id='status' class='form-control' name='status'>
             <option value='1'>Active</option>
             <option value='0'>Inactive</option>

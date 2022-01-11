@@ -13,6 +13,9 @@
 * <img alt="html" width="26px" src="https://raw.githubusercontent.com/boris-catsvill/project-structure/master/tech-stack/html.png" /> HTML
 * <img alt="CSS" width="26px" src="https://raw.githubusercontent.com/boris-catsvill/project-structure/master/tech-stack/css.png" /> CSS
 
+## Внимание!
+Работа административной панели на мобильных устройствах/планшетах не гарантируется!
+
 ## To start project in development mode:
 
 * `npm install` - установит необходимые зависимости
